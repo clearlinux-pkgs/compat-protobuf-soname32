@@ -1,0 +1,4 @@
+pushd python
+#python ./setup.py install --root=%{buildroot} --cpp_implementation
+#python3 ./setup.py install --root=%{buildroot} --cpp_implementation
+popd

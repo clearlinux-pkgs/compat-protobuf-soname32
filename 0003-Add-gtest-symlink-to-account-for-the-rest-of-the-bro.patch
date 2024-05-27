@@ -1,0 +1,23 @@
+From fb5363a96a7d59228afddc06b6cf176be626b5b1 Mon Sep 17 00:00:00 2001
+From: Ikey Doherty <michael.i.doherty@intel.com>
+Date: Fri, 13 May 2016 16:28:38 +0100
+Subject: [PATCH 3/3] Add gtest symlink to account for the rest of the broken
+ build system
+
+Signed-off-by: Ikey Doherty <michael.i.doherty@intel.com>
+---
+ gmock/gtest | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 120000 gmock/gtest
+
+diff --git a/gmock/gtest b/gmock/gtest
+new file mode 120000
+index 0000000..fa0ca02
+--- /dev/null
++++ b/gmock/gtest
+@@ -0,0 +1 @@
++../gtest
+\ No newline at end of file
+-- 
+2.8.2
+

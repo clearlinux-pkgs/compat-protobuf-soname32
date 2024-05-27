@@ -1,0 +1,42 @@
+From 9651ff67d845846c67e1f3443299089fa7a21749 Mon Sep 17 00:00:00 2001
+From: Ikey Doherty <michael.i.doherty@intel.com>
+Date: Fri, 13 May 2016 16:22:32 +0100
+Subject: [PATCH 2/3] Ensure everything can build in tree
+
+Signed-off-by: Ikey Doherty <michael.i.doherty@intel.com>
+---
+ gmock/configure.ac | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/gmock/configure.ac b/gmock/configure.ac
+index 3b740f2..a27ab82 100644
+--- a/gmock/configure.ac
++++ b/gmock/configure.ac
+@@ -1,4 +1,4 @@
+-m4_include(../googletest/m4/acx_pthread.m4)
++m4_include(../gtest/m4/acx_pthread.m4)
+ 
+ AC_INIT([Google C++ Mocking Framework],
+         [1.7.0],
+@@ -129,14 +129,14 @@ AS_IF([test "x${HAVE_BUILT_GTEST}" = "xyes"],
+       GTEST_LDFLAGS=`${GTEST_CONFIG} --ldflags`
+       GTEST_LIBS=`${GTEST_CONFIG} --libs`
+       GTEST_VERSION=`${GTEST_CONFIG} --version`],
+-      [AC_CONFIG_SUBDIRS([../googletest])
++      [AC_CONFIG_SUBDIRS([../gtest])
+       # GTEST_CONFIG needs to be executable both in a Makefile environmont and
+       # in a shell script environment, so resolve an absolute path for it here.
+-      GTEST_CONFIG="`pwd -P`/../googletest/scripts/gtest-config"
+-      GTEST_CPPFLAGS='-I$(top_srcdir)/../googletest/include'
++      GTEST_CONFIG="`pwd -P`/../gtest/scripts/gtest-config"
++      GTEST_CPPFLAGS='-I$(top_srcdir)/../gtest/include'
+       GTEST_CXXFLAGS='-g'
+       GTEST_LDFLAGS=''
+-      GTEST_LIBS='$(top_builddir)/../googletest/lib/libgtest.la'
++      GTEST_LIBS='$(top_builddir)/../gtest/lib/libgtest.la'
+       GTEST_VERSION="${GTEST_MIN_VERSION}"])
+ 
+ # TODO(chandlerc@google.com) Check the types, structures, and other compiler
+-- 
+2.8.2
+
